@@ -54,7 +54,7 @@ def precipitation():
 
     results_prcp = session.query(Measurement.date, Measurement.prcp).filter(Measurement.date >= one_year_ago).order_by((Measurement.date).desc()).all()
 
-    results_prcp = dict(results_prcp)
+    results_prcp = list(results_prcp)
 
     return jsonify(results_prcp)
 
